@@ -307,8 +307,20 @@
 
 .img_box img {
   width: 100%;
-  max-width: 150px; /* 사진 크기 조정 */
   border-radius: 10px;
+  object-position: 50% 0%;
+}
+
+.rotate {
+  transform: rotate(90deg);
+}
+
+.base-width {
+  max-width: 150px;
+}
+
+.base-height {
+  max-height: 150px;
 }
 
 /* 오른쪽 글자 */
@@ -608,7 +620,7 @@ footer p {
         <li class="contents">
           <div class="con_1">
               <div class="img_box">
-                  <img src="/wedding/assets/img/timeline/2019-12-22.webp" style="object-position: 50% 0%; width: 300px" alt="">
+                  <img class="base-width" src="/wedding/assets/img/timeline/2019-12-22.webp" alt="">
               </div>
               <div class="text_box">2019</div>
           </div>
@@ -622,7 +634,7 @@ footer p {
       <li class="contents reverse">
           <div class="con_1">
               <div class="img_box">
-                  <img src="/wedding/assets/img/timeline/2020-05-05.webp" style="object-position: 50% 0%; width: 300px" alt="">
+                  <img class="base-width" src="/wedding/assets/img/timeline/2020-05-05.webp" alt="">
               </div>
               <div class="text_box">2020</div>
           </div>
@@ -636,7 +648,7 @@ footer p {
       <li class="contents">
         <div class="con_1">
             <div class="img_box">
-                <img src="/wedding/assets/img/timeline/2021-05-31.webp" style="object-position: 50% 0%; width: 300px" alt="">
+                <img class="base-height rotate" src="/wedding/assets/img/timeline/2021-05-31.webp" alt="">
             </div>
             <div class="text_box">2021</div>
         </div>
@@ -649,7 +661,7 @@ footer p {
     <li class="contents reverse">
       <div class="con_1">
           <div class="img_box">
-              <img src="/wedding/assets/img/timeline/2022-12-25.webp" style="object-position: 50% 0%; width: 300px" alt="">
+              <img class="base-height rotate" src="/wedding/assets/img/timeline/2022-12-25.webp" alt="">
           </div>
           <div class="text_box">2022</div>
       </div>
@@ -662,7 +674,7 @@ footer p {
   <li class="contents">
     <div class="con_1">
         <div class="img_box">
-            <img src="/wedding/assets/img/timeline/2023-08-18.webp" style="object-position: 50% 0%; width: 300px" alt="">
+            <img class="base-width" src="/wedding/assets/img/timeline/2023-08-18.webp" alt="">
         </div>
         <div class="text_box">2023</div>
     </div>
@@ -675,7 +687,7 @@ footer p {
 <li class="contents reverse">
   <div class="con_1">
       <div class="img_box">
-          <img src="/wedding/assets/img/timeline/2024-01-06.webp" style="object-position: 50% 0%; width: 300px" alt="">
+          <img class="base-height rotate" src="/wedding/assets/img/timeline/2024-01-06.webp" alt="">
       </div>
       <div class="text_box">2024</div>
   </div>
@@ -688,7 +700,7 @@ footer p {
 <li class="contents">
   <div class="con_1">
       <div class="img_box">
-          <img src="/wedding/assets/img/timeline/2024-12-27.webp" style="object-position: 50% 0%; width: 300px" alt="">
+          <img class="base-width" src="/wedding/assets/img/timeline/2024-12-27.webp" alt="">
       </div>
       <div class="text_box">2025 ~</div>
   </div>
@@ -718,7 +730,7 @@ footer p {
           <img src="/wedding/assets/img/gallery/2020-01-19.webp" alt="Image 1">
         </div>
         <div class="swiper-slide">
-          <img src="/wedding/assets/img/gallery/2020-05-05-2.webp" alt="Image 1">
+          <img src="/wedding/assets/img/gallery/2020-05-05-2.jpeg" alt="Image 1">
         </div>
         <div class="swiper-slide">
           <img src="/wedding/assets/img/gallery/2020-05-05-3.webp" alt="Image 1">
@@ -739,19 +751,19 @@ footer p {
           <img src="/wedding/assets/img/gallery/2020-07-18.webp" alt="Image 1">
         </div>
         <div class="swiper-slide">
-          <img src="/wedding/assets/img/gallery/2022-06-10.webp" alt="Image 1">
+          <img src="/wedding/assets/img/gallery/2022-06-10.jpeg" alt="Image 1">
         </div>
         <div class="swiper-slide">
-          <img src="/wedding/assets/img/gallery/2022-12-05.webp" alt="Image 1">
+          <img src="/wedding/assets/img/gallery/2022-12-05.jpeg" alt="Image 1">
         </div>
         <div class="swiper-slide">
           <img src="/wedding/assets/img/gallery/2023-08-27.webp" alt="Image 1">
         </div>
         <div class="swiper-slide">
-          <img src="/wedding/assets/img/gallery/2023-12-12.webp" alt="Image 1">
+          <img src="/wedding/assets/img/gallery/2023-12-12.jpeg" alt="Image 1">
         </div>
         <div class="swiper-slide">
-          <img src="/wedding/assets/img/gallery/2024-01-06-3.webp" alt="Image 1">
+          <img src="/wedding/assets/img/gallery/2024-01-06-3.jpeg" alt="Image 1">
         </div>
         <div class="swiper-slide">
           <img src="/wedding/assets/img/gallery/2024-03-29.webp" alt="Image 1">
@@ -760,7 +772,7 @@ footer p {
           <img src="/wedding/assets/img/gallery/2024-05-01.webp" alt="Image 1">
         </div>
         <div class="swiper-slide">
-          <img src="/wedding/assets/img/gallery/2024-06-01.webp" alt="Image 1">
+          <img src="/wedding/assets/img/gallery/2024-06-01.jpeg" alt="Image 1">
         </div>
       </div>
       <div id="we-swiper-button-next" class="swiper-button-next"></div>
@@ -929,7 +941,7 @@ footer p {
   </section>
 
   <section class="finale">
-    <img src="/wedding/assets/img/finale/2022-12-05.webp" alt="이미지 설명" />
+    <img src="/wedding/assets/img/finale/2022-12-05.jpeg" alt="이미지 설명" />
     <div class="text-overlay">
       <p>
         <span>축하해 주시는 모든 소중한 분들의</span>

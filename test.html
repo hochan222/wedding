@@ -12,7 +12,7 @@
     <meta property="og:site_name" content="이호찬 ♥ 김현주 결혼합니다.">
     <meta property="og:locale" content="ko_KR">
     <title>호찬♥현주</title>
-    <link rel=" shortcut icon " href="./assets/img/favicon.ico">
+    <link rel="shortcut icon " href="./assets/img/favicon.ico">
     <link rel="icon" href="./assets/img/favicon.ico">
     <link rel="preload" href="./assets/img/tree.webp" as="image" type="image/webp">
     <link rel="preload" href="https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff" as="font" type="font/woff" crossorigin="anonymous">
@@ -363,8 +363,8 @@
 
 .finale img {
   width: 100%;
-  height: auto; /* 이미지 비율을 유지 */
-  display: block; /* 이미지 아래에 여백이 생기지 않게 */
+  height: auto; 
+  display: block; 
 }
 
 .text-overlay {
@@ -563,6 +563,112 @@ footer p {
   margin: 0;  /* 기본 마진 제거 */
 }
     </style>
+    <style>
+      .popup-container {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 999;
+      }
+      
+      .popup-content {
+        background: white;
+        width: 90%;
+        max-width: 400px;
+        margin: 5% auto;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        overflow: hidden; /* 내용이 튀어나가지 않도록 */
+      }
+      
+      .popup-header {
+        padding: 15px;
+        color: white;
+        border-radius: 10px 10px 0 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .form-group {
+        padding: 15px;
+        border-bottom: 1px solid #eee;
+      }
+      
+      input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+      
+      .button-group {
+        padding: 15px;
+        text-align: right;
+        display: flex;
+        justify-content: flex-end;
+      }
+      
+      .submit-btn, .close-btn {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        height: 40px; /* 버튼 높이 통일 */
+        line-height: 20px; /* 텍스트 수직 정렬 */
+      }
+      
+      .submit-btn {
+        background: #6E85B7;
+        color: white;
+        margin-right: 10px;
+      }
+    
+      .popup-trigger {
+  background-color: #f8e8e8;
+  color: #d4726a;
+  border: 2px solid #d4726a;
+  border-radius: 25px;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  /* 수정된 스타일 */
+  display: block;
+  margin: 0 auto;
+  width: fit-content;
+  margin-top: 20px;
+}
+
+
+.popup-trigger:hover {
+  background-color: #d4726a;
+  color: #ffffff;
+}
+
+.button-text {
+  margin-right: 8px;
+}
+
+.button-icon {
+  font-size: 20px;
+}
+
+      </style>
   </head>
   <body>
     <header class="wrap">
@@ -577,6 +683,75 @@ footer p {
 
     <section class="countdown" id="countdown"></section>
 
+    <button onclick="openForm()" class="popup-trigger">
+      <span class="button-text">참석 여부 알려주기</span>
+      <span class="button-icon">💌</span>
+    </button>
+    
+    <section id="rsvpPopup" class="popup-container">
+      <div class="popup-content">
+        <div class="popup-header" style="background: #6E85B7;">
+          <h2>참석 응답</h2>
+        </div>
+    
+        <form id="rsvpForm">
+          <div class="form-group">
+            <label for="name">이름</label>
+            <input type="text" id="name" name="name" required 
+                   placeholder="이름을 입력해주세요">
+          </div>
+    
+          <div class="form-group">
+            <label>유형</label>
+            <div class="radio-group">
+              <label>
+                <input type="radio" name="type" value="호찬" required>
+                호찬
+              </label>
+              <label>
+                <input type="radio" name="type" value="현주">
+                현주
+              </label>
+              <label>
+                <input type="radio" name="type" value="호찬 부모님">
+                호찬 부모님
+              </label>
+              <label>
+                <input type="radio" name="type" value="현주 부모님">
+                현주 부모님
+              </label>
+            </div>
+          </div>
+    
+          <div class="form-group">
+            <label>참석 여부</label>
+            <div class="radio-group">
+              <label>
+                <input type="radio" name="attendance" value="Y" required>
+                기쁘게 참석하겠습니다
+              </label>
+              <label>
+                <input type="radio" name="attendance" value="N">
+                아쉽게도 참석이 어렵습니다
+              </label>
+            </div>
+          </div>
+    
+          <div class="form-group">
+            <label for="guests">참석 인원</label>
+            <input type="number" id="guests" name="guests" min="0" max="20" 
+                   placeholder="참석 인원을 입력해주세요">
+          </div>
+    
+          <div class="button-group">
+            <button type="submit" class="submit-btn">제출하기</button>
+            <button type="button" onclick="closeForm()" 
+                    class="close-btn">이미 응답했어요</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
     <section class="type_j_info">
       <div class="time">
         <h3>2025년 6월 15일 일요일 12:30 PM</h3>
@@ -590,11 +765,15 @@ footer p {
 
     <div class="body-texts">
       <p>
-        우리의 사랑을 함께 축하해 주시길 바라며,
+        2019년 12월, 캠퍼스에서 시작된 우리의 인연이 
         <br />
-        두 사람의 새로운 시작에 여러분을 초대합니다.
+        사랑으로 자라나 한 걸음 더 나아가려 합니다. 
         <br />
-        소중한 분들과 함께 행복한 순간을 나누고 싶습니다.
+        함께 웃고, 함께 울며 쌓아온 소중한 시간을 바탕으로 
+        <br />
+        평생을 함께할 약속을 하려 합니다. 
+        <br />
+        그 시작의 자리에서 소중한 분들과 함께 행복한 순간을 나누고 싶습니다.
         <br />
         많은 응원과 축복 부탁드립니다.
       </p>
@@ -659,7 +838,7 @@ footer p {
       <li class="contents">
         <div class="con_1">
             <div class="img_box">
-                <img class="base-height rotate" src="./assets/img/timeline/2021-05-31.webp" alt="">
+                <img class="base-width" src="./assets/img/timeline/2021-05-31.jpeg" alt="">
             </div>
             <div class="text_box">2021</div>
         </div>
@@ -672,7 +851,7 @@ footer p {
     <li class="contents reverse">
       <div class="con_1">
           <div class="img_box">
-              <img class="base-height rotate" src="./assets/img/timeline/2022-12-25.webp" alt="">
+              <img class="base-width" src="./assets/img/timeline/2022-12-25.jpeg" alt="">
           </div>
           <div class="text_box">2022</div>
       </div>
@@ -698,7 +877,7 @@ footer p {
 <li class="contents reverse">
   <div class="con_1">
       <div class="img_box">
-          <img class="base-height rotate" src="./assets/img/timeline/2024-01-06.webp" alt="">
+          <img class="base-width" src="./assets/img/timeline/2024-01-06.jpeg" alt="">
       </div>
       <div class="text_box">2024</div>
   </div>
@@ -835,7 +1014,7 @@ footer p {
     </span>네이버지도
   </a>
 
-  </section>
+  </section> 
 
   <section id="subway" class="come">
     <h4>지하철</h4>
@@ -1057,6 +1236,56 @@ updateTime();
             },
           });
         </script>
+        <script>
+          function openForm() {
+            document.getElementById('rsvpPopup').style.display = 'block';
+          }
+          
+          function closeForm() {
+            document.getElementById('rsvpPopup').style.display = 'none';
+          }
+          
+          document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+              name: this.name.value,
+              type: this.type.value,
+              attendance: this.attendance.value
+            };
+          
+            console.log('formData', formData)
+        
+              const gscriptUrl = `https://script.google.com/macros/s/AKfycbwbPc8zt_gKDrSqiTdeXzKNknGXc49AIikMOZexuQc-Wyazu_NHdRFHNhrbu5_CizwsXQ/exec`
+              const body = {
+                name: this.name.value,
+                type: this.type.value,
+                attendance: this.attendance.value,
+                count: this.guests.value,
+                // meta: {
+                //   objects: 'turn',
+                //   out: 'pretty',
+                //   weird: 'too'
+                // }
+              }
+              const fetchOptions = {
+                method: 'POST',
+                body: JSON.stringify(body)
+              }
+        
+              fetch(gscriptUrl, fetchOptions)
+                .then(res => res.json())
+                .then(data => {
+                  alert('응답이 저장되었습니다!');
+                  closeForm();
+                })
+                .then(console.log)
+                .catch(err => {
+                  console.error('Error:', err);
+                  alert('오류 발생! 다시 시도해주세요.');
+                });
+          });
+          </script>
       </body>
     </html>
   </body>

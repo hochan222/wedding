@@ -563,6 +563,110 @@ footer p {
   margin: 0;  /* 기본 마진 제거 */
 }
     </style>
+    <style>
+      .popup-container {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 999;
+      }
+      
+      .popup-content {
+        background: white;
+        width: 90%;
+        max-width: 400px;
+        margin: 5% auto;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        overflow: hidden; /* 내용이 튀어나가지 않도록 */
+      }
+      
+      .popup-header {
+        padding: 15px;
+        color: white;
+        border-radius: 10px 10px 0 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .form-group {
+        padding: 15px;
+        border-bottom: 1px solid #eee;
+      }
+      
+      input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+      
+      .button-group {
+        padding: 15px;
+        text-align: right;
+        display: flex;
+        justify-content: flex-end;
+      }
+      
+      .submit-btn, .close-btn {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        height: 40px; 
+        line-height: 20px; 
+      }
+      
+      .submit-btn {
+        background: #6E85B7;
+        color: white;
+        margin-right: 10px;
+      }
+    
+      .popup-trigger {
+  background-color: #f8e8e8;
+  color: #d4726a;
+  border: 2px solid #d4726a;
+  border-radius: 25px;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  display: block;
+  margin: 0 auto;
+  width: fit-content;
+  margin-top: 20px;
+}
+
+.popup-trigger:hover {
+  background-color: #d4726a;
+  color: #ffffff;
+}
+
+.button-text {
+  margin-right: 8px;
+}
+
+.button-icon {
+  font-size: 20px;
+}
+
+      </style>
   </head>
   <body>
     <header class="wrap">
@@ -576,6 +680,75 @@ footer p {
     </header>
 
     <section class="countdown" id="countdown"></section>
+
+    <button onclick="openForm()" class="popup-trigger">
+      <span class="button-text">참석 여부 알려주기</span>
+      <span class="button-icon">💌</span>
+    </button>
+    
+    <section id="rsvpPopup" class="popup-container">
+      <div class="popup-content">
+        <div class="popup-header" style="background: #6E85B7;">
+          <h2>참석 응답</h2>
+        </div>
+    
+        <form id="rsvpForm">
+          <div class="form-group">
+            <label for="name">이름</label>
+            <input type="text" id="name" name="name" required 
+                   placeholder="이름을 입력해주세요">
+          </div>
+    
+          <div class="form-group">
+            <label>유형</label>
+            <div class="radio-group">
+              <label>
+                <input type="radio" name="type" value="호찬" required>
+                호찬
+              </label>
+              <label>
+                <input type="radio" name="type" value="현주">
+                현주
+              </label>
+              <label>
+                <input type="radio" name="type" value="호찬 부모님">
+                호찬 부모님
+              </label>
+              <label>
+                <input type="radio" name="type" value="현주 부모님">
+                현주 부모님
+              </label>
+            </div>
+          </div>
+    
+          <div class="form-group">
+            <label>참석 여부</label>
+            <div class="radio-group">
+              <label>
+                <input type="radio" name="attendance" value="Y" required>
+                기쁘게 참석하겠습니다
+              </label>
+              <label>
+                <input type="radio" name="attendance" value="N">
+                아쉽게도 참석이 어렵습니다
+              </label>
+            </div>
+          </div>
+    
+          <div class="form-group">
+            <label for="guests">참석 인원</label>
+            <input type="number" id="guests" name="guests" min="0" max="20" 
+                   placeholder="참석 인원을 입력해주세요">
+          </div>
+    
+          <div class="button-group">
+            <button type="submit" class="submit-btn">제출하기</button>
+            <button type="button" onclick="closeForm()" 
+                    class="close-btn">이미 응답했어요</button>
+          </div>
+        </form>
+      </div>
+    </section>
 
     <section class="type_j_info">
       <div class="time">
@@ -1061,6 +1234,56 @@ updateTime();
             },
           });
         </script>
+        <script>
+          function openForm() {
+            document.getElementById('rsvpPopup').style.display = 'block';
+          }
+          
+          function closeForm() {
+            document.getElementById('rsvpPopup').style.display = 'none';
+          }
+          
+          document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+              name: this.name.value,
+              type: this.type.value,
+              attendance: this.attendance.value
+            };
+          
+            console.log('formData', formData)
+        
+              const gscriptUrl = `https://script.google.com/macros/s/AKfycbwbPc8zt_gKDrSqiTdeXzKNknGXc49AIikMOZexuQc-Wyazu_NHdRFHNhrbu5_CizwsXQ/exec`
+              const body = {
+                name: this.name.value,
+                type: this.type.value,
+                attendance: this.attendance.value,
+                count: this.guests.value,
+                // meta: {
+                //   objects: 'turn',
+                //   out: 'pretty',
+                //   weird: 'too'
+                // }
+              }
+              const fetchOptions = {
+                method: 'POST',
+                body: JSON.stringify(body)
+              }
+        
+              fetch(gscriptUrl, fetchOptions)
+                .then(res => res.json())
+                .then(data => {
+                  alert('응답이 저장되었습니다!');
+                  closeForm();
+                })
+                .then(console.log)
+                .catch(err => {
+                  console.error('Error:', err);
+                  alert('오류 발생! 다시 시도해주세요.');
+                });
+          });
+          </script>
       </body>
     </html>
   </body>

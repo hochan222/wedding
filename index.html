@@ -1312,14 +1312,13 @@ updateTime();
           
           document.getElementById('rsvpForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
+            closeForm();
+
             const formData = {
               name: this.name.value,
               type: this.type.value,
               attendance: this.attendance.value
             };
-          
-            console.log('formData', formData)
         
               const gscriptUrl = `https://script.google.com/macros/s/AKfycbwbPc8zt_gKDrSqiTdeXzKNknGXc49AIikMOZexuQc-Wyazu_NHdRFHNhrbu5_CizwsXQ/exec`
               const body = {
@@ -1341,8 +1340,7 @@ updateTime();
               fetch(gscriptUrl, fetchOptions)
                 .then(res => res.json())
                 .then(data => {
-                  alert('응답이 저장되었습니다!');
-                  closeForm();
+                  alert('응답이 저장되었습니다!');           
                 })
                 .then(console.log)
                 .catch(err => {

@@ -1295,6 +1295,7 @@ updateTime();
           
           document.getElementById('rsvpForm').addEventListener('submit', function(e) {
             e.preventDefault();
+            closeForm();
             
             const formData = {
               name: this.name.value,
@@ -1325,7 +1326,7 @@ updateTime();
                 .then(res => res.json())
                 .then(data => {
                   alert('응답이 저장되었습니다!');
-                  closeForm();
+                  // closeForm();
                 })
                 .then(console.log)
                 .catch(err => {

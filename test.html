@@ -181,7 +181,7 @@
 
 .profile h3 {
   font-size: 1.5rem;
-  margin: 10 10;
+  margin: 8px;
 }
 
 .profile h3 .label {
@@ -197,7 +197,7 @@
 }
 
 .profile small {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #777;
 }
 
@@ -240,6 +240,7 @@
         align-items: center; 
         justify-content: center; 
         text-align: center;
+        margin-top: 20px;
       }
 
       .ing p { 
@@ -493,60 +494,6 @@
   line-height: 2;
 }
 
-.account-info {
-  margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.account-title {
-  font-size: 1rem;
-  border-radius: 5px;
-  width: 80%;
-}
-
-.account {
-  margin-bottom: 8px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 5px 20px;
-  border: 1px solid #ccc;
-  background-color: #f7f7f7;
-  position: relative;
-}
-
-.account h4 {
-  font-size: 1.3rem;
-  color: #6E85B7;
-  margin: 10px 0px;  /* 여백을 줄여서 h4와 다른 요소 간의 간격을 줄임 */
-}
-
-.account p {
-  font-size: 1rem;
-  margin: 0;
-}
-
-.account button {
-  position: absolute;
-  top: 50%;  /* 세로 기준으로 중앙에 위치 */
-  right: 10px;  /* 오른쪽 끝에 배치 */
-  transform: translateY(-50%);  /* 세로 기준으로 정확히 중앙에 오도록 보정 */
-  padding: 8px 16px;
-  font-size: 1rem;
-  color: #fff;
-  background-color: #6E85B7;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.account button:hover {
-  background-color: #4b6a8d;
-}
-
-
 footer {
   width: 100%;
   background-color: #f8f9fa; /* 배경색 */
@@ -669,6 +616,103 @@ input[type="number"] {
 }
 
       </style>
+
+<style>
+  .account-info {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+.account-title {
+  font-size: 1rem;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.account {
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* 변경: 왼쪽 정렬 */
+  padding: 5px 20px;
+  border: 1px solid #ccc;
+  background-color: #f7f7f7;
+  position: relative;
+  width: 100%;
+  min-width: 280px;
+  box-sizing: border-box;
+  text-align: left; /* 변경: 텍스트 왼쪽 정렬 */
+}
+
+.account h4 {
+  font-size: 1.3rem;
+  color: #6E85B7;
+  margin: 10px 0px;
+  width: 100%;
+  text-align: left; /* 변경: 텍스트 왼쪽 정렬 */
+}
+
+.account p {
+  font-size: 1rem;
+  margin: 0;
+  width: calc(100% - 80px);
+  word-break: break-all;
+  text-align: left; /* 변경: 텍스트 왼쪽 정렬 */
+}
+
+.account button {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  padding: 8px 16px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #6E85B7;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.account button:hover {
+  background-color: #4b6a8d;
+}
+
+.toggle-btn {
+  background-color: #6E85B7;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+  text-align: left;
+}
+
+.toggle-btn:hover {
+  background-color: #4b6a8d;
+}
+
+.arrow {
+  float: right;
+  transition: transform 0.3s ease;
+}
+
+.toggle-btn.active .arrow {
+  transform: rotate(180deg);
+}
+
+#groomAccounts, #brideAccounts {
+  width: 100%;
+}
+
+</style>
+
   </head>
   <body>
     <header class="wrap">
@@ -676,8 +720,8 @@ input[type="number"] {
         <h1>이호찬</h1>
         <h2>♥</h2>
         <h1>김현주</h1>
-        <p>2025. 6. 15, 서울에서</p>
-        <h3>우리의 소중한 날에 초대합니다.</h3>
+        <p>2025. 6. 15, 서울 아벤티움에서</p>
+        <h3>우리의 새로운 여정에 함께 해주세요.</h3>
       </div>
     </header>
 
@@ -772,8 +816,8 @@ input[type="number"] {
         함께 웃고, 함께 울며 쌓아온 소중한 시간을 바탕으로 
         <br />
         평생을 함께할 약속을 하려 합니다. 
-        <br />
-        그 시작의 자리에서 소중한 분들과 함께 행복한 순간을 나누고 싶습니다.
+        <br /><br />
+        그 시작의 자리에서 소중한 분들과 <br /> 행복한 순간을 함께 나누고 싶습니다.
         <br />
         많은 응원과 축복 부탁드립니다.
       </p>
@@ -783,19 +827,20 @@ input[type="number"] {
  <article class="profile">
     <img src="./assets/img/self-introduction/hochan.webp" alt="신랑 사진">
   <h3><span class="label">신랑</span> 이호찬</h3>
-  <p>나무같은 남편이 되겠습니다.</p>
-  <small>#INFJ</small>
+  <small><strong>이장훈·길원정</strong>의 아들</small>
   <br>
-  <small>이호찬·이호찬의 아들</small>
+  <p>끈기있는 남편이 되겠습니다.</p>
+  <small>#INFJ</small>
+  <small>#초긍정적</small>
 </article>
 
 <article class="profile">
     <img src="./assets/img/self-introduction/hyunju.webp" alt="신부 사진">
   <h3><span class="label">신부</span> 김현주</h3>
-  <p>햇살같은 아내가 되겠습니다</p>
+  <small><strong>김종완·이영미</strong>의 딸</small>
+  <p>봄날의 햇살같은 아내가 되겠습니다</p>
   <small>#ISTJ-T</small>
-  <br>
-  <small>김현주·김현주의 딸</small>
+  <small>#끈기왕</small>
 </article>
     </section>
 
@@ -1076,56 +1121,59 @@ input[type="number"] {
 
       <div class="account-info">
         <div class="account-title">
-          <h3>신랑측</h3>
-        
-
-        <div class="account">
-          <h4>신랑</h4>
-          <p>123-123-123</p>
-          <p>국민은행 이호찬</p>
-          <button onclick="copyToClipboard('groomAccount')">복사</button>
+          <button class="toggle-btn" onclick="toggleAccounts('groom')">
+            신랑측 <span class="arrow">▼</span>
+          </button>
         </div>
-
-        <div class="account">
-          <h4>아버님</h4>
-          <p>112-233-4455</p>
-          <p>하나은행 이철수</p>
-          <button onclick="copyToClipboard('fatherAccount')">복사</button>
+        <div id="groomAccounts" style="display: none;">
+          <div class="account">
+            <h4>신랑</h4>
+            <p>123-123-123</p>
+            <p>국민은행 이호찬</p>
+            <button onclick="copyToClipboard('123-123-123 국민은행 이호찬')">복사</button>
+          </div>
+      
+          <div class="account">
+            <h4>아버님</h4>
+            <p>112-233-4455</p>
+            <p>하나은행 이장훈</p>
+            <button onclick="copyToClipboard('112-233-4455 하나은행 이장훈')">복사</button>
+          </div>
+      
+          <div class="account">
+            <h4>어머님</h4>
+            <p>556-667-7889</p>
+            <p>농협 길원정</p>
+            <button onclick="copyToClipboard('556-667-7889 농협 길원정')">복사</button>
+          </div>
         </div>
-    
-        <div class="account">
-          <h4>어머님</h4>
-          <p>556-667-7889</p>
-          <p>농협 김미영</p>
-          <button onclick="copyToClipboard('motherAccount')">복사</button>
-        </div>
-
       </div>
-    
+      
+      <div class="account-info">
         <div class="account-title">
-          <h3>신부측</h3>
-    
-
-        <div class="account">
-          <h4>신부</h4>
-          <p>098-765-4321</p>
-          <p>우리은행 김현주</p>
-          <button onclick="copyToClipboard('brideAccount')">복사</button>
+          <button class="toggle-btn" onclick="toggleAccounts('bride')">
+            신부측 <span class="arrow">▼</span>
+          </button>
         </div>
-    
-        <div class="account">
-          <h4>아버님</h4>
-          <p>112-233-4455</p>
-          <p>하나은행 이철수</p>
-          <button onclick="copyToClipboard('fatherAccount')">복사</button>
-        </div>
-    
-        <div class="account">
-          <h4>어머님</h4>
-          <p>556-667-7889</p>
-          <p>농협 김미영</p>
-          <button onclick="copyToClipboard('motherAccount')">복사</button>
-        </div>
+        <div id="brideAccounts" style="display: none;">
+          <div class="account">
+            <h4>신부</h4>
+            <p>456-456-456</p>
+            <p>신한은행 김현주</p>
+            <button onclick="copyToClipboard('456-456-456 신한은행 김현주')">복사</button>
+          </div>
+          <div class="account">
+            <h4>아버님</h4>
+            <p>789-789-789</p>
+            <p>우리은행 김종완</p>
+            <button onclick="copyToClipboard('789-789-789 우리은행 김종완')">복사</button>
+          </div>
+          <div class="account">
+            <h4>어머님</h4>
+            <p>789-789-789</p>
+            <p>우리은행 이영미</p>
+            <button onclick="copyToClipboard('789-789-789 우리은행 이영미')">복사</button>
+          </div>
         </div>
       </div>
   </section>
@@ -1286,6 +1334,30 @@ updateTime();
                 });
           });
           </script>
+<script>
+  function toggleAccounts(side) {
+    var accountsId = side === 'groom' ? "groomAccounts" : "brideAccounts";
+    var accounts = document.getElementById(accountsId);
+    var btn = document.querySelector(`.toggle-btn[onclick="toggleAccounts('${side}')"]`);
+    if (accounts.style.display === "none") {
+      accounts.style.display = "block";
+      btn.classList.add("active");
+    } else {
+      accounts.style.display = "none";
+      btn.classList.remove("active");
+    }
+  }
+  
+  function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(function() {
+      alert("계좌 정보가 복사되었습니다: " + text);
+    }, function(err) {
+      console.error('복사 실패: ', err);
+    });
+  }
+  </script>
+  
+            
       </body>
     </html>
   </body>

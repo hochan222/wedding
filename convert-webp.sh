@@ -41,12 +41,12 @@ process_directory() {
 
 # 메인 실행
 main() {
-    if [ ! -d "./assets/img" ]; then
+    if [ ! -d "./img" ]; then
         echo "오류: /img 폴더가 존재하지 않습니다."
         exit 1
     fi
 
-    process_directory "./assets/img"
+    process_directory "./img"
     echo "모든 이미지 변환 및 원본 삭제가 완료되었습니다."
 }
 

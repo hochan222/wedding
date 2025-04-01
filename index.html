@@ -1162,14 +1162,14 @@ input[type="number"] {
           <div class="account">
             <h4>아버님</h4>
             <p>112-233-4455</p>
-            <p>하나은행 이장훈</p>
+            <p>하나은행 이장훈 <a href="tel:01000000000">📞</a></p>
             <button onclick="copyToClipboard('112-233-4455 하나은행 이장훈')">복사</button>
           </div>
       
           <div class="account">
             <h4>어머님</h4>
             <p>556-667-7889</p>
-            <p>농협 길원정</p>
+            <p>농협 길원정 <a href="tel:01000000000">📞</a></p>
             <button onclick="copyToClipboard('556-667-7889 농협 길원정')">복사</button>
           </div>
         </div>
@@ -1191,13 +1191,13 @@ input[type="number"] {
           <div class="account">
             <h4>아버님</h4>
             <p>789-789-789</p>
-            <p>우리은행 김종완</p>
+            <p>우리은행 김종완 <a href="tel:01000000000">📞</a></p>
             <button onclick="copyToClipboard('789-789-789 우리은행 김종완')">복사</button>
           </div>
           <div class="account">
             <h4>어머님</h4>
             <p>789-789-789</p>
-            <p>우리은행 이영미</p>
+            <p>우리은행 이영미 <a href="tel:01000000000">📞</a></p>
             <button onclick="copyToClipboard('789-789-789 우리은행 이영미')">복사</button>
           </div>
         </div>
@@ -1381,31 +1381,25 @@ updateTime();
             }
             </script>
             <script>
-              const observerOptions = {
-                root: null,
-                rootMargin: "0px 0px 300px 0px",
-                threshold: 0,
-              };
+              let imagesLoaded = false; 
 
-              const observer = new IntersectionObserver((entries, io) => {
-                entries.forEach((entry) => {
-                  if (entry.isIntersecting) {
-                    entry.target.classList.add('loaded');
-                    entry.target.setAttribute("src", entry.target.getAttribute("data-src"))
-                    // target.onload = () => {
-                    //   entry.target.classList.add('loaded');
-                    //   entry.target.setAttribute("src", entry.target.getAttribute("data-src"))
-                    // }
-                    io.unobserve(entry.target);
-                  }
+              function loadAllImages() {
+                if (imagesLoaded) return; 
+                imagesLoaded = true; 
+
+                console.log('loadAllImages')
+                document.querySelectorAll("img[data-src]").forEach(img => {
+                  img.setAttribute("src", img.getAttribute("data-src"));
+                  img.classList.add("loaded"); 
                 });
-              }, observerOptions);
+              }
 
-              try {
-                document.querySelectorAll("img").forEach(x=> {
-                  observer.observe(x);
-                })
-              } catch (e) {}
+              if (document.readyState === "complete") {
+                loadAllImages();
+              } else {
+                window.addEventListener("load", loadAllImages);
+                document.addEventListener("DOMContentLoaded", loadAllImages);
+              }
             </script>
       </body>
     </html>

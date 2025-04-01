@@ -952,6 +952,24 @@ input[type="number"] {
   <section class="gallery">
     <h3>갤러리</h3>
 
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; padding: 1vw;">
+      <a class="lightbox-link" data-fslightbox="gallery" href="https://cdn.glitch.com/e4c45146-a1cb-43c3-86fe-35bf46516a43%2Fd.jpg?v=1560731955748">
+        <img style="display: block; margin:1vw; width: 30vw; height: 30vw;" src="https://cdn.glitch.com/e4c45146-a1cb-43c3-86fe-35bf46516a43%2Fd.jpg?v=1560731955748" alt="Image 1">
+      </a>
+      <a class="lightbox-link" data-fslightbox="gallery" href="https://cdn.glitch.com/e4c45146-a1cb-43c3-86fe-35bf46516a43%2Fd.jpg?v=1560731955748">
+        <img style="display: block; margin:1vw; width: 30vw; height: 30vw;" src="https://cdn.glitch.com/e4c45146-a1cb-43c3-86fe-35bf46516a43%2Fd.jpg?v=1560731955748" alt="Image 1">
+      </a>
+      <a class="lightbox-link" data-fslightbox="gallery" href="https://cdn.glitch.com/e4c45146-a1cb-43c3-86fe-35bf46516a43%2Fd.jpg?v=1560731955748">
+        <img style="display: block; margin:1vw; width: 30vw; height: 30vw;" src="https://cdn.glitch.com/e4c45146-a1cb-43c3-86fe-35bf46516a43%2Fd.jpg?v=1560731955748" alt="Image 1">
+      </a>
+      <a class="lightbox-link" data-fslightbox="gallery" href="https://cdn.glitch.com/e4c45146-a1cb-43c3-86fe-35bf46516a43%2Fd.jpg?v=1560731955748">
+        <img style="display: block; margin:1vw; width: 30vw; height: 30vw;" src="https://cdn.glitch.com/e4c45146-a1cb-43c3-86fe-35bf46516a43%2Fd.jpg?v=1560731955748" alt="Image 1">
+      </a>
+      <a class="lightbox-link" data-fslightbox="gallery" href="https://cdn.glitch.com/e4c45146-a1cb-43c3-86fe-35bf46516a43%2Fd.jpg?v=1560731955748">
+        <img style="display: block; margin:1vw; width: 30vw; height: 30vw;" src="https://cdn.glitch.com/e4c45146-a1cb-43c3-86fe-35bf46516a43%2Fd.jpg?v=1560731955748" alt="Image 1">
+      </a>
+    </div>
+
     <div id="we-swiper-container" class="swiper-container">
       <div class="swiper-wrapper">
         <!-- <div class="swiper-slide">
@@ -1404,6 +1422,22 @@ updateTime();
                 window.addEventListener("load", loadAllImages);
                 document.addEventListener("DOMContentLoaded", loadAllImages);
               }
+            </script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.4.1/index.min.js"></script>
+            <script>
+              // lightbox.option({ disableScrolling:true })
+              fsLightboxInstances["gallery"].props.onOpen = function () {
+                console.log('open')
+                // fslightbox.open();
+                // lightbox.open();
+              }
+              // document.querySelectorAll('.lightbox-link').forEach(link => {
+              //   link.addEventListener('click', function(event) {
+              //     event.preventDefault(); // 기본 동작 방지 (페이지 이동 차단)
+              //     const lightbox = new FSLightbox();
+              //     lightbox.open(link); // fslightbox로 이미지 오픈
+              //   });
+              // });
             </script>
       </body>
     </html>

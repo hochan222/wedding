@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="./assets/img/favicon.ico">
     <link rel="icon" href="./assets/img/favicon.ico">
 
-    <link rel="preload" href="./assets/img/tree.webp" as="image" type="image/webp">
+    <link rel="preload" href="./assets/img/propose.webp" as="image" type="image/webp">
     <link rel="preload" href="https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff" as="font" type="font/woff" crossorigin="anonymous">
     <link rel="preload" href="https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105@1.1/Yoonwoo.woff" as="font" type="font/woff" crossorigin="anonymous">
     
@@ -45,6 +45,15 @@
       <span class="button-text">참석 여부 알려주기</span>
       <span class="button-icon">💌</span>
     </button>
+
+    <button class="kakao-share" id="kakaotalk-sharing-btn">
+      <span class="button-text">카카오톡 공유하기</span>
+      <span class="button-icon">🔗</span>
+    </button>
+
+    <div id="btnKakao">
+      <button id="kakaotalk-sharing-btn">카카오톡 공유</button>
+    </div>
     
     <section id="rsvpPopup" class="popup-container">
       <div class="popup-content">
@@ -557,11 +566,6 @@
       </p>
     </div>
   </section>
-
-  <div id="btnKakao">
-    <button id="kakaotalk-sharing-btn">카카오톡 공유</button>
-  </div>
-
 
   <footer>
     <p>Copyright © 2025 HOCHAN LEE. All Rights Reserved.</p>

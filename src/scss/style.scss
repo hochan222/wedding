@@ -31,10 +31,10 @@ body {
   -webkit-justify-content: center;
   justify-content: center;
   text-align: center;
-  // background-image: url("/wedding/assets/img/tree.webp");
-  background-image: url("../assets/img/tree.webp");
+  background-image: url("/wedding/assets/img/propose.webp");
+  // background-image: url("../assets/img/propose.webp");
   background-size: cover;
-  height: 870px;
+  height: 390px;
   padding-top: 25px;
 
   .title {
@@ -691,6 +691,23 @@ input[type="number"] {
 .popup-trigger:hover {
   background-color: #d4726a;
   color: #ffffff;
+}
+
+.kakao-share {
+  background-color: #fae100;
+  color: black;
+  border: 2px solid black;
+  border-radius: 25px;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  display: block;
+  margin: 0 auto;
+  width: fit-content;
+  margin-top: 20px;
 }
 
 .button-text {

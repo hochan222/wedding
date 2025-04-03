@@ -32,9 +32,9 @@ body {
   justify-content: center;
   text-align: center;
   background-image: url("/wedding/assets/img/propose.webp");
-  // background-image: url("../assets/img/propose.webp");
+  // background-image: url("../assets/img/propose-sky.webp");
   background-size: cover;
-  height: 390px;
+  height: 250px;
   padding-top: 25px;
 
   .title {
@@ -77,6 +77,20 @@ body {
       font-size: 16px;
     }
   }
+}
+
+.wrap2 {
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  justify-content: center;
+  text-align: center;
+  background-image: url("/wedding/assets/img/propose.webp");
+  // background-image: url("../assets/img/propose.webp");
+  background-size: cover;
+  height: 390px;
+  padding-top: 25px;
 }
 
 // body-texts

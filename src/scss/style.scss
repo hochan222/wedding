@@ -34,8 +34,10 @@ body {
   background-image: url("/wedding/assets/img/propose.webp");
   // background-image: url("../assets/img/propose-sky.webp");
   background-size: cover;
-  height: 250px;
+  height: 300px;
   padding-top: 25px;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
 
   .title {
     h1 {
@@ -91,6 +93,8 @@ body {
   background-size: cover;
   height: 390px;
   padding-top: 25px;
+  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
 }
 
 // body-texts

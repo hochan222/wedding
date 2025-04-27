@@ -13,7 +13,7 @@ convert_to_webp_and_remove() {
     if [ $? -eq 0 ]; then
         echo "변환 완료: $file -> ${dir}/${name}.webp"
         # 변환 성공 시 원본 파일 삭제
-        # rm "$file"
+        rm "$file"
         echo "원본 파일 삭제: $file"
     else
         echo "변환 실패: $file"

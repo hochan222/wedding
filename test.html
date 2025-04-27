@@ -4,11 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex,nofollow">
+    <meta name="keywords" content="이호찬 ♥ 김현주 결혼합니다.">
+    <meta name="description" content="2025년 6월 15일 일요일 오후 12시 30분">
+    <meta name="author" content="hochan222">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hochan222.github.io/wedding/">
     <meta property="og:title" content="이호찬 ♥ 김현주 결혼합니다.">
-    <meta property="og:image" content="./assets/img/gallery/2020-01-19.webp">
+    <meta property="og:image" content="./assets/img/wedding.webp">
     <meta property="og:description" content="2025년 6월 15일 일요일 오후 12시 30분">
     <meta property="og:site_name" content="이호찬 ♥ 김현주 결혼합니다.">
     <meta property="og:locale" content="ko_KR">
@@ -17,6 +20,7 @@
     <link rel="shortcut icon" href="./assets/img/favicon.ico">
     <link rel="icon" href="./assets/img/favicon.ico">
 
+    <link rel="preload" href="./assets/img/propose-sky.webp" as="image" type="image/webp">
     <link rel="preload" href="./assets/img/propose.webp" as="image" type="image/webp">
     <link rel="preload" href="https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff" as="font" type="font/woff" crossorigin="anonymous">
     <link rel="preload" href="https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105@1.1/Yoonwoo.woff" as="font" type="font/woff" crossorigin="anonymous">
@@ -51,10 +55,6 @@
       <span class="button-text">카카오톡 공유하기</span>
       <span class="button-icon">🔗</span>
     </button>
-
-    <div id="btnKakao">
-      <button id="kakaotalk-sharing-btn">카카오톡 공유</button>
-    </div>
     
     <section id="rsvpPopup" class="popup-container">
       <div class="popup-content">
@@ -129,21 +129,25 @@
       </div>
     </section>
 
-    <img class="calender" data-src="./assets/img/calender.webp" />
+    <img class="calender" data-src="./assets/img/calender.webp" alt="calender" />
 
     <div class="body-texts">
       <p>
-        2019년 12월, 캠퍼스에서 시작된 저희의 인연이 
+        2019년 12월, 캠퍼스에서 처음 만난 저희는
         <br />
-        사랑으로 자라나 한 걸음 더 나아가려 합니다. 
+        서로를 아끼고 이해하며 함께하는 법을 배워왔습니다.
         <br />
-        함께 웃고 울며 쌓아온 소중한 시간을 바탕으로 
+        그 시간이 모여 이제는
         <br />
-        평생을 함께할 약속을 하려 합니다. 
+        인생이라는 길을 함께 걷고자 합니다.
         <br /><br />
-        그 시작의 자리에서 소중한 분들과 <br /> 행복한 순간을 함께 나누고 싶습니다.
+        저희의 소중한 시작을
         <br />
-        많은 응원과 축복 부탁드립니다.
+        귀한 분들과 함께 나누고 싶습니다.
+        <br />
+        축복 속에 첫 걸음을 내디딜 수 있도록
+        <br />
+        따뜻한 응원 부탁드립니다.
       </p>
     </div>
 
@@ -153,7 +157,7 @@
   <h3><span class="label">신랑</span> 이호찬</h3>
   <small><strong>이장훈·길원정</strong>의 아들</small>
   <br>
-  <p>지혜롭고 슬기로운<br>든든한 남편이<br>되겠습니다.</p>
+  <p>지혜롭고<br>믿음직한 남편이<br>되겠습니다.</p>
   <small>#INFJ</small>
   <small>#초긍정적</small>
 </article>
@@ -276,13 +280,60 @@
   <section class="gallery">
     <h3>갤러리</h3>
 
+    <div id="food-swiper-container" class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img data-src="./assets/img/gallery2/1.webp" alt="Image 1">
+        </div>
+        <div class="swiper-slide">
+          <img data-src="./assets/img/gallery2/2.webp" alt="Image 1">
+        </div>
+        <div class="swiper-slide">
+          <img data-src="./assets/img/gallery2/3.webp" alt="Image 1">
+        </div>
+        <div class="swiper-slide">
+          <img data-src="./assets/img/gallery2/4.webp" alt="Image 1">
+        </div>
+      </div>
+      <div id="food-swiper-button-next" class="swiper-button-next"></div>
+      <div id="food-swiper-button-prev" class="swiper-button-prev"></div>
+      <div id="food-swiper-pagination" class="swiper-pagination"></div>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; padding: 1vw; margin: 2vw 0;">
+      <a class="lightbox-link" data-fslightbox="gallery" href="./assets/img/gallery/0000-00-00-0.webp">
+        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="./assets/img/gallery/0000-00-00-0.webp" alt="Image 1">
+      </a>
+      <a class="lightbox-link" data-fslightbox="gallery" href="./assets/img/gallery/0000-00-00.webp">
+        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="./assets/img/gallery/0000-00-00.webp" alt="Image 1">
+      </a>
+      <a class="lightbox-link" data-fslightbox="gallery" href="./assets/img/gallery/2020-01-19.webp">
+        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="./assets/img/gallery/2020-01-19.webp" alt="Image 1">
+      </a>
+      <a class="lightbox-link" data-fslightbox="gallery" href="./assets/img/gallery/2020-05-05-2.jpeg">
+        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="./assets/img/gallery/2020-05-05-2.jpeg" alt="Image 1">
+      </a>
+      <a class="lightbox-link" data-fslightbox="gallery" href="./assets/img/gallery-nine/5.webp">
+        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="./assets/img/gallery-nine/5.webp" alt="Image 1">
+      </a>
+      <a class="lightbox-link" data-fslightbox="gallery" href="./assets/img/gallery-nine/6.webp">
+        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="./assets/img/gallery-nine/6.webp" alt="Image 1">
+      </a>
+      <a class="lightbox-link" data-fslightbox="gallery" href="./assets/img/gallery/2020-07-18.webp">
+        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="./assets/img/gallery/2020-07-18.webp" alt="Image 1">
+      </a>
+      <a class="lightbox-link" data-fslightbox="gallery" href="./assets/img/gallery/2022-06-10.jpeg">
+        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="./assets/img/gallery/2022-06-10.jpeg" alt="Image 1">
+      </a>
+      <a class="lightbox-link" data-fslightbox="gallery" href="./assets/img/gallery/unknown3.webp">
+        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="./assets/img/gallery/unknown3.webp" alt="Image 1">
+      </a>
+    </div>
+
     <div id="we-swiper-container" class="swiper-container">
       <div class="swiper-wrapper">
-        <!-- <div class="swiper-slide">
-          <img data-src="./assets/img/gallery/unknown.jpeg" alt="Image 1">
-        </div> -->
         <div class="swiper-slide">
-          <img data-src="./assets/img/gallery/0000-00-00-0.webp" alt="Image 1">
+          <img data-src="./assets/img/gallery/1.webp" alt="Image 1">
         </div>
         <div class="swiper-slide">
           <img data-src="./assets/img/gallery/0000-00-00.webp" alt="Image 1">
@@ -314,9 +365,6 @@
         <div class="swiper-slide">
           <img data-src="./assets/img/gallery/2022-06-10.jpeg" alt="Image 1">
         </div>
-        <!-- <div class="swiper-slide">
-          <img data-src="./assets/img/gallery/2022-12-05.jpeg" alt="Image 1">
-        </div> -->
         <div class="swiper-slide">
           <img data-src="./assets/img/gallery/2023-08-27.webp" alt="Image 1">
         </div>
@@ -335,9 +383,6 @@
         <div class="swiper-slide">
           <img data-src="./assets/img/gallery/2024-06-01.jpeg" alt="Image 1">
         </div>
-        <!-- <div class="swiper-slide">
-          <img data-src="./assets/img/gallery/unknown2.webp" alt="Image 1">
-        </div> -->
         <div class="swiper-slide">
           <img data-src="./assets/img/gallery/unknown3.webp" alt="Image 1">
         </div>
@@ -345,62 +390,6 @@
       <div id="we-swiper-button-next" class="swiper-button-next"></div>
       <div id="we-swiper-button-prev" class="swiper-button-prev"></div>
       <div id="we-swiper-pagination" class="swiper-pagination"></div>
-    </div>
-
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; padding: 1vw; margin: 2vw 0;">
-      <a class="lightbox-link" data-fslightbox="gallery" href="./assets/img/gallery/0000-00-00-0.webp">
-        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="./assets/img/gallery/0000-00-00-0.webp" alt="Image 1">
-      </a>
-      <a class="lightbox-link" data-fslightbox="gallery" href="./assets/img/gallery/0000-00-00.webp">
-        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="./assets/img/gallery/0000-00-00.webp" alt="Image 1">
-      </a>
-      <a class="lightbox-link" data-fslightbox="gallery" href="./assets/img/gallery/2020-01-19.webp">
-        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="./assets/img/gallery/2020-01-19.webp" alt="Image 1">
-      </a>
-      <a class="lightbox-link" data-fslightbox="gallery" href="./assets/img/gallery/2020-05-05-2.jpeg">
-        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="./assets/img/gallery/2020-05-05-2.jpeg" alt="Image 1">
-      </a>
-      <a class="lightbox-link" data-fslightbox="gallery" href="./assets/img/gallery/2020-05-05-3.webp">
-        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="./assets/img/gallery/2020-05-05-3.webp" alt="Image 1">
-      </a>
-      <a class="lightbox-link" data-fslightbox="gallery" href="./assets/img/gallery/2020-06-21.webp">
-        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="./assets/img/gallery/2020-06-21.webp" alt="Image 1">
-      </a>
-      <a class="lightbox-link" data-fslightbox="gallery" href="./assets/img/gallery/2020-07-18.webp">
-        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="./assets/img/gallery/2020-07-18.webp" alt="Image 1">
-      </a>
-      <a class="lightbox-link" data-fslightbox="gallery" href="./assets/img/gallery/2022-06-10.jpeg">
-        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="./assets/img/gallery/2022-06-10.jpeg" alt="Image 1">
-      </a>
-      <a class="lightbox-link" data-fslightbox="gallery" href="./assets/img/gallery/unknown3.webp">
-        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="./assets/img/gallery/unknown3.webp" alt="Image 1">
-      </a>
-    </div>
-
-    <div id="food-swiper-container" class="swiper-container">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img data-src="./assets/img/object-gallery/unknown.webp" alt="Image 1">
-        </div>
-        <div class="swiper-slide">
-          <img data-src="./assets/img/object-gallery/unknown1.jpeg" alt="Image 2">
-        </div>
-        <div class="swiper-slide">
-          <img data-src="./assets/img/object-gallery/unknown2.webp" alt="Image 3">
-        </div>
-        <div class="swiper-slide">
-          <img data-src="./assets/img/object-gallery/unknown3.webp" alt="Image 4">
-        </div>
-        <div class="swiper-slide">
-          <img data-src="./assets/img/object-gallery/unknown4.webp" alt="Image 5">
-        </div>
-        <div class="swiper-slide">
-          <img data-src="./assets/img/object-gallery/unknown5.jpeg" alt="Image 6">
-        </div>
-      </div>
-      <div id="food-swiper-button-next" class="swiper-button-next"></div>
-      <div id="food-swiper-button-prev" class="swiper-button-prev"></div>
-      <div id="food-swiper-pagination" class="swiper-pagination"></div>
     </div>
   </section>
 
@@ -559,7 +548,7 @@
   </section>
 
   <section class="finale">
-    <img data-src="./assets/img/finale/2022-12-05.jpeg" alt="이미지 설명" />
+    <img data-src="./assets/img/finale/1.webp" alt="이미지 설명" />
     <div class="text-overlay">
       <p>
         <span>축하해 주시는 모든 소중한 분들의</span>
@@ -571,6 +560,7 @@
   <footer>
     <p>Copyright © 2025 HOCHAN LEE. All Rights Reserved.</p>
   </footer>
+
   <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
   <script type='text/javascript'>
       Kakao.init('744c87b6624d5bdfb1c400966134fea7');
@@ -579,10 +569,11 @@
         templateId: 119265,
       });
   </script>
+
         <script>
           var sakura=new Sakura("body",{blow:0.8,lifeTime:5500});const targetDate=new Date("2025-06-15T00:00:00").setHours(0,0,0,0),currentDate=new Date().setHours(0,0,0,0),days=(targetDate-currentDate)/(1e3*60*60*24);let message;message=days>0?`호찬 ♥️ 현주의 결혼식이 ${days}일 남았습니다.`:days===0?"오늘은 호찬 ♥️ 현주의 결혼식입니다!":`호찬 ♥️ 현주의 결혼식이 ${Math.abs(days)}일 지났습니다.`,document.getElementById("countdown").innerHTML=message;function updateTime(){const firstDate=document.querySelector(".our_date").getAttribute("firstdate"),firstDateTime=new Date(firstDate),currentTime=new Date,diff=currentTime-firstDateTime,seconds=Math.floor(diff/1e3),minutes=Math.floor(seconds/60),hours=Math.floor(minutes/60),days=Math.floor(hours/24),months=Math.floor(days/30.4167),years=Math.floor(months/12),remainingDays=days%30.4167,remainingMonths=months%12,remainingHours=hours%24,remainingMinutes=minutes%60,remainingSeconds=seconds%60,timeString=`${years}년 ${remainingMonths}개월 ${Math.floor(remainingDays)}일 ${remainingHours}시간 ${remainingMinutes}분 ${remainingSeconds}초`;document.querySelector(".our_date").textContent=`"${timeString}"`}setInterval(updateTime,1e3),updateTime();new Swiper("#we-swiper-container",{slidesPerView:1,spaceBetween:10,effect:"cards",grabCursor:!0,pagination:{el:"#we-swiper-pagination",clickable:!0},navigation:{nextEl:"#we-swiper-button-next",prevEl:"#we-swiper-button-prev"}});new Swiper("#food-swiper-container",{slidesPerView:1,spaceBetween:10,effect:"cards",grabCursor:!0,pagination:{el:"#food-swiper-pagination",clickable:!0},navigation:{nextEl:"#food-swiper-button-next",prevEl:"#food-swiper-button-prev"}});function openForm(){document.getElementById("rsvpPopup").style.display="block"}function closeForm(){document.getElementById("rsvpPopup").style.display="none"}document.getElementById("rsvpForm").addEventListener("submit",function(e){e.preventDefault(),closeForm();const body={name:this.name.value,type:this.type.value,attendance:this.attendance.value,count:this.guests.value},gscriptUrl="https://script.google.com/macros/s/AKfycbwbPc8zt_gKDrSqiTdeXzKNknGXc49AIikMOZexuQc-Wyazu_NHdRFHNhrbu5_CizwsXQ/exec",fetchOptions={method:"POST",body:JSON.stringify(body)};fetch(gscriptUrl,fetchOptions).then(res=>res.json()).then(data=>{alert("응답이 저장되었습니다!")}).then(console.log).catch(err=>{console.error("Error:",err),alert("오류 발생! 다시 시도해주세요.")})});function toggleAccounts(side){var accountsId=side==="groom"?"groomAccounts":"brideAccounts",accounts=document.getElementById(accountsId),btn=document.querySelector(`.toggle-btn[onclick="toggleAccounts('${side}')"]`);accounts.style.display==="none"?(accounts.style.display="block",btn.classList.add("active")):(accounts.style.display="none",btn.classList.remove("active"))}function copyToClipboard(text){navigator.clipboard.writeText(text).then(function(){alert("계좌 정보가 복사되었습니다: "+text)},function(err){console.error("복사 실패: ",err)})}let imagesLoaded=!1;function loadAllImages(){if(imagesLoaded)return;imagesLoaded=!0,console.log("loadAllImages"),document.querySelectorAll("img[data-src]").forEach(img=>{img.setAttribute("src",img.getAttribute("data-src")),img.classList.add("loaded")})}document.readyState==="complete"?loadAllImages():(window.addEventListener("load",loadAllImages),document.addEventListener("DOMContentLoaded",loadAllImages));
-            </script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.4.1/index.min.js"></script>
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.4.1/index.min.js"></script>
       </body>
     </html>
   </body>

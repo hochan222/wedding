@@ -30,7 +30,7 @@
     
     <script src="/wedding/assets/js/sakura.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <link rel="stylesheet" href="/wedding/public/style.css">
+    <link rel="stylesheet" href="./public/style.css">
   </head>
   <body>
     <header class="wrap">
@@ -280,10 +280,60 @@
   <section class="gallery">
     <h3>갤러리</h3>
 
+    <div id="food-swiper-container" class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img data-src="/wedding/assets/img/gallery2/1.webp" alt="Image 1">
+        </div>
+        <div class="swiper-slide">
+          <img data-src="/wedding/assets/img/gallery2/2.webp" alt="Image 1">
+        </div>
+        <div class="swiper-slide">
+          <img data-src="/wedding/assets/img/gallery2/3.webp" alt="Image 1">
+        </div>
+        <div class="swiper-slide">
+          <img data-src="/wedding/assets/img/gallery2/4.webp" alt="Image 1">
+        </div>
+      </div>
+      <div id="food-swiper-button-next" class="swiper-button-next"></div>
+      <div id="food-swiper-button-prev" class="swiper-button-prev"></div>
+      <div id="food-swiper-pagination" class="swiper-pagination"></div>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; padding: 1vw; margin: 2vw 0;">
+      <a class="lightbox-link" data-fslightbox="gallery" href="/wedding/assets/img/gallery/0000-00-00-0.webp">
+        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="/wedding/assets/img/gallery/0000-00-00-0.webp" alt="Image 1">
+      </a>
+      <a class="lightbox-link" data-fslightbox="gallery" href="/wedding/assets/img/gallery/0000-00-00.webp">
+        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="/wedding/assets/img/gallery/0000-00-00.webp" alt="Image 1">
+      </a>
+      <a class="lightbox-link" data-fslightbox="gallery" href="/wedding/assets/img/gallery/2020-01-19.webp">
+        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="/wedding/assets/img/gallery/2020-01-19.webp" alt="Image 1">
+      </a>
+      <a class="lightbox-link" data-fslightbox="gallery" href="/wedding/assets/img/gallery/2020-05-05-2.jpeg">
+        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="/wedding/assets/img/gallery/2020-05-05-2.jpeg" alt="Image 1">
+      </a>
+      <a class="lightbox-link" data-fslightbox="gallery" href="/wedding/assets/img/gallery-nine/5.webp">
+        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="/wedding/assets/img/gallery-nine/5.webp" alt="Image 1">
+      </a>
+      <a class="lightbox-link" data-fslightbox="gallery" href="/wedding/assets/img/gallery-nine/6.webp">
+        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="/wedding/assets/img/gallery-nine/6.webp" alt="Image 1">
+      </a>
+      <a class="lightbox-link" data-fslightbox="gallery" href="/wedding/assets/img/gallery/2020-07-18.webp">
+        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="/wedding/assets/img/gallery/2020-07-18.webp" alt="Image 1">
+      </a>
+      <a class="lightbox-link" data-fslightbox="gallery" href="/wedding/assets/img/gallery/2022-06-10.jpeg">
+        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="/wedding/assets/img/gallery/2022-06-10.jpeg" alt="Image 1">
+      </a>
+      <a class="lightbox-link" data-fslightbox="gallery" href="/wedding/assets/img/gallery/unknown3.webp">
+        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="/wedding/assets/img/gallery/unknown3.webp" alt="Image 1">
+      </a>
+    </div>
+
     <div id="we-swiper-container" class="swiper-container">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <img data-src="/wedding/assets/img/gallery/0000-00-00-0.webp" alt="Image 1">
+          <img data-src="/wedding/assets/img/gallery/1.webp" alt="Image 1">
         </div>
         <div class="swiper-slide">
           <img data-src="/wedding/assets/img/gallery/0000-00-00.webp" alt="Image 1">
@@ -340,62 +390,6 @@
       <div id="we-swiper-button-next" class="swiper-button-next"></div>
       <div id="we-swiper-button-prev" class="swiper-button-prev"></div>
       <div id="we-swiper-pagination" class="swiper-pagination"></div>
-    </div>
-
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; padding: 1vw; margin: 2vw 0;">
-      <a class="lightbox-link" data-fslightbox="gallery" href="./assets/img/gallery/0000-00-00-0.webp">
-        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="./assets/img/gallery/0000-00-00-0.webp" alt="Image 1">
-      </a>
-      <a class="lightbox-link" data-fslightbox="gallery" href="./assets/img/gallery/0000-00-00.webp">
-        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="./assets/img/gallery/0000-00-00.webp" alt="Image 1">
-      </a>
-      <a class="lightbox-link" data-fslightbox="gallery" href="./assets/img/gallery/2020-01-19.webp">
-        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="./assets/img/gallery/2020-01-19.webp" alt="Image 1">
-      </a>
-      <a class="lightbox-link" data-fslightbox="gallery" href="./assets/img/gallery/2020-05-05-2.jpeg">
-        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="./assets/img/gallery/2020-05-05-2.jpeg" alt="Image 1">
-      </a>
-      <a class="lightbox-link" data-fslightbox="gallery" href="./assets/img/gallery/2020-05-05-3.webp">
-        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="./assets/img/gallery/2020-05-05-3.webp" alt="Image 1">
-      </a>
-      <a class="lightbox-link" data-fslightbox="gallery" href="./assets/img/gallery/2020-06-21.webp">
-        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="./assets/img/gallery/2020-06-21.webp" alt="Image 1">
-      </a>
-      <a class="lightbox-link" data-fslightbox="gallery" href="./assets/img/gallery/2020-07-18.webp">
-        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="./assets/img/gallery/2020-07-18.webp" alt="Image 1">
-      </a>
-      <a class="lightbox-link" data-fslightbox="gallery" href="./assets/img/gallery/2022-06-10.jpeg">
-        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="./assets/img/gallery/2022-06-10.jpeg" alt="Image 1">
-      </a>
-      <a class="lightbox-link" data-fslightbox="gallery" href="./assets/img/gallery/unknown3.webp">
-        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="./assets/img/gallery/unknown3.webp" alt="Image 1">
-      </a>
-    </div>
-
-    <div id="food-swiper-container" class="swiper-container">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <img data-src="/wedding/assets/img/object-gallery/unknown.webp" alt="Image 1">
-        </div>
-        <div class="swiper-slide">
-          <img data-src="/wedding/assets/img/object-gallery/unknown1.jpeg" alt="Image 2">
-        </div>
-        <div class="swiper-slide">
-          <img data-src="/wedding/assets/img/object-gallery/unknown2.webp" alt="Image 3">
-        </div>
-        <div class="swiper-slide">
-          <img data-src="/wedding/assets/img/object-gallery/unknown3.webp" alt="Image 4">
-        </div>
-        <div class="swiper-slide">
-          <img data-src="/wedding/assets/img/object-gallery/unknown4.webp" alt="Image 5">
-        </div>
-        <div class="swiper-slide">
-          <img data-src="/wedding/assets/img/object-gallery/unknown5.jpeg" alt="Image 6">
-        </div>
-      </div>
-      <div id="food-swiper-button-next" class="swiper-button-next"></div>
-      <div id="food-swiper-button-prev" class="swiper-button-prev"></div>
-      <div id="food-swiper-pagination" class="swiper-pagination"></div>
     </div>
   </section>
 
@@ -554,7 +548,7 @@
   </section>
 
   <section class="finale">
-    <img data-src="/wedding/assets/img/finale/2022-12-05.jpeg" alt="이미지 설명" />
+    <img data-src="/wedding/assets/img/finale/1.webp" alt="이미지 설명" />
     <div class="text-overlay">
       <p>
         <span>축하해 주시는 모든 소중한 분들의</span>

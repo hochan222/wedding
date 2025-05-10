@@ -736,3 +736,14 @@ input[type="number"] {
 .button-icon {
   font-size: 20px;
 }
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  resize: none;
+}

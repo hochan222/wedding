@@ -130,9 +130,44 @@ document.getElementById("rsvpForm").addEventListener("submit", function (e) {
     .then(console.log)
     .catch((err) => {
       console.error("Error:", err);
-      alert("오류 발생! 다시 시도해주세요.");
+      alert("오류 발생했어요! 다시 시도해주세요.");
     });
 });
+
+function openGuestbook() {
+  document.getElementById("guestbookPopup").style.display = "block";
+}
+
+function closeGuestbook() {
+  document.getElementById("guestbookPopup").style.display = "none";
+}
+
+document
+  .getElementById("guestbookForm")
+  .addEventListener("submit", function (e) {
+    e.preventDefault();
+    closeGuestbook();
+
+    const name = this.guestName.value;
+    const message = this.guestMessage.value;
+
+    const gscriptUrl = `https://script.google.com/macros/s/AKfycbxG_2066v4oF59miftkFkYj7I4HR9tTt7Y5wmTw2jAMnqNkRCtb4vJ6zHQ_rg7k0vn5/exec`;
+    const body = { name, message };
+    const fetchOptions = {
+      method: "POST",
+      body: JSON.stringify(body),
+    };
+
+    fetch(gscriptUrl, fetchOptions)
+      .then((res) => res.json())
+      .then(() => {
+        alert("메시지가 저장되었습니다! 감사합니다 💕");
+      })
+      .catch((err) => {
+        console.error("Error:", err);
+        alert("오류가 발생했어요. 다시 시도해주세요!");
+      });
+  });
 
 // account
 function toggleAccounts(side) {

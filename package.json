@@ -1,0 +1,14 @@
+{
+  "name": "wedding",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/hochan222/wedding.git",
+  "author": "hochan222 <hochan049@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.86.1"
+  },
+  "scripts": {
+    "build": "yarn sass --no-source-map --style=compressed src/scss/style.scss public/style.css"
+  }
+}

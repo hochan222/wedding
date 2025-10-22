@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="keywords" content="이호찬 ♥ 김현주 결혼합니다.">
+    <meta name="description" content="2025년 06월 15일 일요일 낮 12시 30분">
+    <meta name="author" content="hochan222">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hochan222.github.io/wedding/">
+    <meta property="og:title" content="이호찬 ♥ 김현주 결혼합니다.">
+    <meta property="og:image" content="https://hochan222.github.io/wedding/assets/img/wedding-og.webp">
+    <meta property="og:description" content="2025년 06월 15일 일요일 낮 12시 30분">
+    <meta property="og:site_name" content="이호찬 ♥ 김현주 결혼합니다.">
+    <meta property="og:locale" content="ko_KR">
+
+    <title>호찬♥현주</title>
+    <link rel="shortcut icon" href="./assets/img/favicon.ico">
+    <link rel="icon" href="./assets/img/favicon.ico">
+
+    <link rel="preload" href="./assets/img/propose.webp" as="image" type="image/webp">
+    <link rel="preload" href="https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff" as="font" type="font/woff" crossorigin="anonymous">
+    <link rel="preload" href="https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105@1.1/Yoonwoo.woff" as="font" type="font/woff" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="./assets/css/sakura.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@11.2.6/swiper-bundle.min.css">
+    
+    <script src="./assets/js/sakura.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="./public/style.css">
+  </head>
+  <body>
+    <header class="wrap">
+      <div class="title">
+        <h1>이호찬</h1>
+        <h2>♥</h2>
+        <h1>김현주</h1>
+        <p>2025년 06월 15일, 서울 아벤티움에서</p>
+        <h3>저희의 새로운 여정에 함께 해주세요.</h3>
+      </div>
+    </header>
+    <main class="wrap2"></main>
+
+    <section class="countdown" id="countdown"></section>
+
+    <button onclick="openForm()" class="popup-trigger">
+      <span class="button-text">참석 여부 알려주기</span>
+      <span class="button-icon">💌</span>
+    </button>
+
+    <button class="kakao-share" id="kakaotalk-sharing-btn">
+      <span class="button-text">카카오톡 공유하기</span>
+      <span class="button-icon">🔗</span>
+    </button>
+
+    <button onclick="openGuestbook()" class="popup-trigger">
+      <span class="button-text">축하의 메시지를 남겨주세요</span>
+      <span class="button-icon">🎉</span>
+    </button>
+    
+    <section id="guestbookPopup" class="popup-container">
+      <div class="popup-content">
+        <div class="popup-header" style="background: #F59E0B;">
+          <h2>방문록</h2>
+        </div>
+    
+        <form id="guestbookForm">
+          <div class="form-group">
+            <label for="guestName">이름</label>
+            <input type="text" id="guestName" name="guestName" required placeholder="이름을 입력해주세요">
+          </div>
+    
+          <div class="form-group">
+            <label for="guestMessage">메시지</label>
+            <textarea id="guestMessage" name="guestMessage" rows="4" required placeholder="축하의 마음을 남겨주세요 :)"></textarea>
+          </div>
+    
+          <div class="button-group">
+            <button type="submit" class="submit-btn">메시지 남기기</button>
+            <button type="button" onclick="closeGuestbook()" class="close-btn">닫기</button>
+          </div>
+        </form>
+      </div>
+    </section>
+    
+    <section id="rsvpPopup" class="popup-container">
+      <div class="popup-content">
+        <div class="popup-header" style="background: #6E85B7;">
+          <h2>참석 응답</h2>
+        </div>
+    
+        <form id="rsvpForm">
+          <div class="form-group">
+            <label for="name">이름</label>
+            <input type="text" id="name" name="name" required 
+                   placeholder="이름을 입력해주세요">
+          </div>
+    
+          <div class="form-group">
+            <label>하객 구분</label>
+            <div class="radio-group">
+              <label>
+                <input type="radio" name="type" value="호찬" required>
+                호찬
+              </label>
+              <label>
+                <input type="radio" name="type" value="현주">
+                현주
+              </label>
+              <label>
+                <input type="radio" name="type" value="호찬 부모님">
+                호찬 부모님
+              </label>
+              <label>
+                <input type="radio" name="type" value="현주 부모님">
+                현주 부모님
+              </label>
+            </div>
+          </div>
+    
+          <div class="form-group">
+            <label>참석 여부</label>
+            <div class="radio-group">
+              <label>
+                <input type="radio" name="attendance" value="Y" required>
+                기쁘게 참석하겠습니다
+              </label>
+              <label>
+                <input type="radio" name="attendance" value="N">
+                아쉽게도 참석이 어렵습니다
+              </label>
+            </div>
+          </div>
+    
+          <div class="form-group">
+            <label for="guests">참석 인원</label>
+            <input type="number" id="guests" name="guests" min="0" max="20" 
+                   placeholder="참석 인원을 입력해주세요">
+          </div>
+    
+          <div class="button-group">
+            <button type="submit" class="submit-btn">제출하기</button>
+            <button type="button" onclick="closeForm()" 
+                    class="close-btn">이미 응답했어요</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="type_j_info">
+      <div class="time">
+        <h3>2025년 06월 15일 일요일</h3>
+        <h3>낮 12시 30분</h3>
+      </div>
+      <div class="locate">
+        <h3>아벤티움 서울 웨딩홀 3F</h3>
+      </div>
+    </section>
+
+    <img class="calender" data-src="./assets/img/calender.webp" alt="calender" />
+
+    <div class="body-texts">
+      <p>
+        2019년 12월, 캠퍼스에서 처음 만난 저희는
+        <br />
+        서로를 아끼고 이해하며 함께하는 법을 배워왔습니다.
+        <br />
+        그 시간이 모여 이제는
+        <br />
+        인생이라는 길을 함께 걷고자 합니다.
+        <br /><br />
+        저희의 소중한 시작을
+        <br />
+        귀한 분들과 함께 나누고 싶습니다.
+        <br />
+        축복 속에 첫 걸음을 내디딜 수 있도록
+        <br />
+        따뜻한 응원 부탁드립니다.
+      </p>
+    </div>
+
+    <section class="self-introduction">
+ <article class="profile">
+    <img data-src="./assets/img/self-introduction/hochan.webp" alt="신랑 사진">
+  <h3><span class="label">신랑</span> 이호찬</h3>
+  <small><strong>이장훈·길원정</strong>의 아들</small>
+  <br>
+  <p>지혜롭고<br>믿음직한 남편이<br>되겠습니다.</p>
+  <small>#INFJ</small>
+  <small>#초긍정적</small>
+</article>
+
+<article class="profile">
+    <img data-src="./assets/img/self-introduction/hyunju.webp" alt="신부 사진">
+  <h3><span class="label">신부</span> 김현주</h3>
+  <small><strong>김종완·이영미</strong>의 딸</small>
+  <p>봄날의 햇살같은<br>따뜻한 아내가<br>되겠습니다.</p>
+  <small>#ISTJ-T</small>
+  <small>#끈기왕</small>
+</article>
+    </section>
+
+    <section class="ing">
+      <p>함께한 시간</p>
+      <p class="our_date" firstdate="2019-12-05"></p>
+    </section>
+
+    <section class="timeline">
+      <h3>since 2019.12.05</h3>
+      <ul>
+        <li class="contents">
+          <div class="con_1">
+              <div class="img_box">
+                  <img class="base-width" data-src="./assets/img/timeline/2019-12-22.webp" alt="">
+              </div>
+              <div class="text_box">2019</div>
+          </div>
+          <div class="con_2">
+              <div class="con_title">첫 데이트 💕</div>
+              <div class="con_des">명동에서 결혼식 구경했는데</div>
+              <div class="con_des">♥ 결혼함 ♥</div>
+          </div>
+          <div class="step_box"></div>
+      </li>
+      <li class="contents reverse">
+          <div class="con_1">
+              <div class="img_box">
+                  <img class="base-width" data-src="./assets/img/timeline/2020-05-05.webp" alt="">
+              </div>
+              <div class="text_box">2020</div>
+          </div>
+          <div class="con_2">
+              <div class="con_title">고양이 야옹 🐱</div>
+              <div class="con_des">코로나가 심해서</div>
+              <div class="con_des">조심했던 데이트</div>
+          </div>
+          <div class="step_box"></div>
+      </li>
+      <li class="contents">
+        <div class="con_1">
+            <div class="img_box">
+                <img class="base-width" data-src="./assets/img/timeline/2021-05-31.jpeg" alt="">
+            </div>
+            <div class="text_box">2021</div>
+        </div>
+        <div class="con_2">
+            <div class="con_title">코엑스<br>아쿠아리움 🐳</div>
+            <div class="con_des">첫 수족관 데이트</div>
+        </div>
+        <div class="step_box"></div>
+    </li>
+    <li class="contents reverse">
+      <div class="con_1">
+          <div class="img_box">
+              <img class="base-width" data-src="./assets/img/timeline/2022-12-25.jpeg" alt="">
+          </div>
+          <div class="text_box">2022</div>
+      </div>
+      <div class="con_2">
+          <div class="con_title">명동성당 <br>크리스마스 🎄</div>
+          <div class="con_des">화려한 조명이</div>
+          <div class="con_des">저희를 감싸주었어요</div>
+      </div>
+      <div class="step_box"></div>
+  </li>
+  <li class="contents">
+    <div class="con_1">
+        <div class="img_box">
+            <img class="base-width" data-src="./assets/img/timeline/2023-08-18.webp" alt="">
+        </div>
+        <div class="text_box">2023</div>
+    </div>
+    <div class="con_2">
+        <div class="con_title">축 졸업 🎉</div>
+        <div class="con_des">같이 졸업한 날</div>
+    </div>
+    <div class="step_box"></div>
+</li>
+<li class="contents reverse">
+  <div class="con_1">
+      <div class="img_box">
+          <img class="base-width" data-src="./assets/img/timeline/2024.jpeg" alt="">
+      </div>
+      <div class="text_box">2024</div>
+  </div>
+  <div class="con_2">
+      <div class="con_title">롯데월드 🎠</div>
+  </div>
+  <div class="step_box"></div>
+</li>
+<li class="contents">
+  <div class="con_1">
+      <div class="img_box">
+          <img class="base-width" data-src="./assets/img/timeline/wedding.webp" alt="">
+      </div>
+      <div class="text_box">2025 ~</div>
+  </div>
+  <div class="con_2">
+      <div class="con_title">새로운 시작 ❤️</div>
+      <div class="con_des"></div>
+  </div>
+  <div class="step_box"></div>
+</li>
+    </ul>
+    <h3>2025.06.15</h3>
+  </section>
+
+  <section class="gallery">
+    <h3>갤러리</h3>
+
+    <div id="food-swiper-container" class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img data-src="./assets/img/gallery2/1.webp" alt="Image 1">
+        </div>
+        <div class="swiper-slide">
+          <img data-src="./assets/img/gallery2/2.webp" alt="Image 1">
+        </div>
+        <div class="swiper-slide">
+          <img data-src="./assets/img/gallery2/3.webp" alt="Image 1">
+        </div>
+        <div class="swiper-slide">
+          <img data-src="./assets/img/gallery2/4.webp" alt="Image 1">
+        </div>
+        <div class="swiper-slide">
+          <img data-src="./assets/img/gallery2/5.webp" alt="Image 1">
+        </div>
+        <div class="swiper-slide">
+          <img data-src="./assets/img/gallery2/6.webp" alt="Image 1">
+        </div>
+        <div class="swiper-slide">
+          <img data-src="./assets/img/gallery2/7.webp" alt="Image 1">
+        </div>
+      </div>
+      <div id="food-swiper-button-next" class="swiper-button-next"></div>
+      <div id="food-swiper-button-prev" class="swiper-button-prev"></div>
+      <div id="food-swiper-pagination" class="swiper-pagination"></div>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; padding: 1vw; margin: 2vw 0;">
+      <a class="lightbox-link" data-fslightbox="gallery" href="./assets/img/gallery-nine/1.webp">
+        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="./assets/img/gallery-nine/1.webp" alt="Image 1">
+      </a>
+      <a class="lightbox-link" data-fslightbox="gallery" href="./assets/img/gallery-nine/2.webp">
+        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="./assets/img/gallery-nine/2.webp" alt="Image 1">
+      </a>
+      <a class="lightbox-link" data-fslightbox="gallery" href="./assets/img/gallery-nine/3.webp">
+        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="./assets/img/gallery-nine/3.webp" alt="Image 1">
+      </a>
+      <a class="lightbox-link" data-fslightbox="gallery" href="./assets/img/gallery-nine/4.webp">
+        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="./assets/img/gallery-nine/4.webp" alt="Image 1">
+      </a>
+      <a class="lightbox-link" data-fslightbox="gallery" href="./assets/img/gallery-nine/5.webp">
+        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="./assets/img/gallery-nine/5.webp" alt="Image 1">
+      </a>
+      <a class="lightbox-link" data-fslightbox="gallery" href="./assets/img/gallery-nine/6.webp">
+        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="./assets/img/gallery-nine/6.webp" alt="Image 1">
+      </a>
+      <a class="lightbox-link" data-fslightbox="gallery" href="./assets/img/gallery-nine/7.webp">
+        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="./assets/img/gallery-nine/7.webp" alt="Image 1">
+      </a>
+      <a class="lightbox-link" data-fslightbox="gallery" href="./assets/img/gallery-nine/8.webp">
+        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="./assets/img/gallery-nine/8.webp" alt="Image 1">
+      </a>
+      <a class="lightbox-link" data-fslightbox="gallery" href="./assets/img/gallery-nine/9.webp">
+        <img style="display: block; margin:1vw; width: 30vw; height: 30vw; object-fit: cover;" src="./assets/img/gallery-nine/9.webp" alt="Image 1">
+      </a>
+    </div>
+
+    <div id="we-swiper-container" class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img data-src="./assets/img/gallery/1.webp" alt="Image 1">
+        </div>
+        <div class="swiper-slide">
+          <img data-src="./assets/img/gallery/2.webp" alt="Image 1">
+        </div>
+        <div class="swiper-slide">
+          <img data-src="./assets/img/gallery/3.webp" alt="Image 1">
+        </div>
+        <div class="swiper-slide">
+          <img data-src="./assets/img/gallery/4.webp" alt="Image 1">
+        </div>
+        <div class="swiper-slide">
+          <img data-src="./assets/img/gallery/5.webp" alt="Image 1">
+        </div>
+        <div class="swiper-slide">
+          <img data-src="./assets/img/gallery/6.webp" alt="Image 1">
+        </div>
+        <div class="swiper-slide">
+          <img data-src="./assets/img/gallery/7.webp" alt="Image 1">
+        </div>
+        <div class="swiper-slide">
+          <img data-src="./assets/img/gallery/8.webp" alt="Image 1">
+        </div>
+        <div class="swiper-slide">
+          <img data-src="./assets/img/gallery/9.webp" alt="Image 1">
+        </div>
+        <div class="swiper-slide">
+          <img data-src="./assets/img/gallery/2020-01-19.webp" alt="Image 1">
+        </div>
+        <div class="swiper-slide">
+          <img data-src="./assets/img/gallery/2020-05-17-2.webp" alt="Image 1">
+        </div>
+        <div class="swiper-slide">
+          <img data-src="./assets/img/gallery/2020-05-17-3.webp" alt="Image 1">
+        </div>
+      </div>
+      <div id="we-swiper-button-next" class="swiper-button-next"></div>
+      <div id="we-swiper-button-prev" class="swiper-button-prev"></div>
+      <div id="we-swiper-pagination" class="swiper-pagination"></div>
+    </div>
+  </section>
+
+  <section class="directions">
+    <h3>오시는 길</h3>
+
+    <p>아벤티움 <a href="tel:023132480" var="placeTel">📞</a>
+    <br/>
+    서울시 중구 청파로 464
+    <br/>
+    브라운스톤서울 3층, 아벤티움
+  </p>
+
+  <img data-src="./assets/img/aventium.webp" alt="">
+
+  <a href="https://tmap.life/a24c0df1" class="map_btn naver">
+    <span class="img_box">
+      <img data-src="./assets/img/tmap_icon.webp" alt="">
+    </span>티맵
+  </a>
+  <a href="https://kko.kakao.com/QYy9y0JuSj" class="map_btn naver">
+    <span class="img_box">
+      <img data-src="./assets/img/kakao_icon.webp" alt="">
+    </span>카카오맵
+  </a>
+  <a href="https://naver.me/5jJ5Uv4w" class="map_btn naver">
+    <span class="img_box">
+      <img data-src="./assets/img/navermap_icon.webp" alt="">
+    </span>네이버지도
+  </a>
+
+  </section> 
+
+  <section id="subway" class="come">
+    <h4>🚇 지하철</h4>
+    <p>2, 5호선 충정로역 4번 출구 (도보 5분) 
+      <br>
+      출구방향으로 70M 직진 후 횡단보도 건너편 브라운스톤서울 3층
+    </p>
+  </section>
+  <section id="train" class="come">
+    <h4>🚆 KTX</h4>
+    <p>KTX 서울역 3번출구 (서울역 서부광장 방향에서 도보 15분)
+      <br>
+      서대문 06번 버스 -> 한국경제 신문사 건너편 하차 (한정거장)
+    </p>
+  </section>
+  <section id="bus" class="come">
+    <h4>🚌 버스</h4>
+    <p>
+    <strong>한국경제신문사</strong>
+    <br>
+    간선 370, 603
+    <br>
+    지선 7011, 7013A, 7013B, 7017
+    <br>
+    <strong>서울역서부</strong>
+    <br>
+    간선 173, 261, 262, 463, 503, 604
+  </p>
+  </section>
+  <section id="car" class="come">
+    <h4>🚗 주차</h4>
+    <p>
+    서울특별시 중구 청파로 464, 브라운스톤서울
+    <br>
+    네비게이션 "아벤티움 서울"을 검색해주세요.
+    <br>
+    <br>
+    주차는 2시간 주차권을 제공해드립니다.
+    <br>
+    초과되는 시간은 30분당 2000원입니다.
+    <br>
+    - [별관주차장] 서소문공원(중구 칠패로5)
+    <br>
+    - [본관주차장] 브라운스톤서울(중구 청파로 464)
+  </p>
+  </section>
+
+  <section class="convey-your-heart">
+    <h3>마음 전하실 곳</h3>
+    <p var="bankText">전해주시는 진심은 소중하게 간직하여
+      <br>좋은 부부의 모습으로 보답하겠습니다.</p>
+
+      <div class="account-info">
+        <div class="account-title">
+          <button class="toggle-btn" onclick="toggleAccounts('groom')">
+            신랑측 <span class="arrow">▼</span>
+          </button>
+        </div>
+        <div id="groomAccounts" style="display: none;">
+          <div class="account">
+            <h4>신랑</h4>
+            <p>123456-00-123456</p>
+            <p>KB국민은행 이호찬</p>
+            <button onclick="copyToClipboard('123456-00-123456')">복사</button>
+          </div>
+      
+          <div class="account">
+            <h4>아버님</h4>
+            <p>123-123456-12345</p>
+            <p>하나은행 이장훈</p>
+            <button onclick="copyToClipboard('12312345612345')">복사</button>
+          </div>
+      
+          <div class="account">
+            <h4>어머님</h4>
+            <p>123-123456-12345</p>
+            <p>하나은행 길원정</p>
+            <button onclick="copyToClipboard('12312345612345')">복사</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="account-info">
+        <div class="account-title">
+          <button class="toggle-btn" onclick="toggleAccounts('bride')">
+            신부측 <span class="arrow">▼</span>
+          </button>
+        </div>
+        <div id="brideAccounts" style="display: none;">
+          <div class="account">
+            <h4>신부</h4>
+            <p>1234-00-1234567</p>
+            <p>카카오뱅크 김현주</p>
+            <button onclick="copyToClipboard('1234001234567')">복사</button>
+          </div>
+          <div class="account">
+            <h4>아버님</h4>
+            <p>123456-00-123456</p>
+            <p>KB국민은행 김종완</p>
+            <button onclick="copyToClipboard('12345600123456')">복사</button>
+          </div>
+          <div class="account">
+            <h4>어머님</h4>
+            <p>123456-00-123456</p>
+            <p>KB국민은행 이영미</p>
+            <button onclick="copyToClipboard('12345600123456')">복사</button>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <section class="finale">
+    <img data-src="./assets/img/finale/1.webp" alt="이미지 설명" />
+    <div class="text-overlay">
+      <p>
+        <span>축하해 주시는 모든 소중한 분들의</span>
+        <span>따스한 마음을 기억하며 예쁘게 살겠습니다. ♡</span>
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Copyright © 2025 HOCHAN LEE. All Rights Reserved.</p>
+  </footer>
+
+  <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+  <script type='text/javascript'>
+      Kakao.init('744c87b6624d5bdfb1c400966134fea7');
+      Kakao.Share.createCustomButton({
+        container: '#kakaotalk-sharing-btn',
+        templateId: 119265,
+      });
+  </script>
+        <script>
+          var sakura=new Sakura("body",{blow:0.8,lifeTime:5500});const targetDate=new Date("2025-06-15T00:00:00").setHours(0,0,0,0);const currentDate=new Date().setHours(0,0,0,0);const timeRemaining=targetDate-currentDate;const days=timeRemaining/(1000*60*60*24);let message;if(days>0){message=`호찬 ♥️ 현주의 결혼식이 ${days}일 남았습니다.`}else if(days===0){message="오늘은 호찬 ♥️ 현주의 결혼식입니다!"}else{message=`호찬 ♥️ 현주의 결혼식이 ${Math.abs(days)}일 지났습니다.`}document.getElementById("countdown").innerHTML=message;function updateTime(){const firstDate=document.querySelector(".our_date").getAttribute("firstdate");const firstDateTime=new Date(firstDate);const currentTime=new Date();const diff=currentTime-firstDateTime;const seconds=Math.floor(diff/1000);const minutes=Math.floor(seconds/60);const hours=Math.floor(minutes/60);const days=Math.floor(hours/24);const months=Math.floor(days/30.4167);const years=Math.floor(months/12);const remainingDays=days%30.4167;const remainingMonths=months%12;const remainingHours=hours%24;const remainingMinutes=minutes%60;const remainingSeconds=seconds%60;const timeString=`${years}년 ${remainingMonths}개월 ${Math.floor(remainingDays)}일 ${remainingHours}시간 ${remainingMinutes}분 ${remainingSeconds}초`;document.querySelector(".our_date").textContent=`"${timeString}"`}setInterval(updateTime,1000);updateTime();new Swiper("#we-swiper-container",{slidesPerView:1,spaceBetween:10,effect:"cards",grabCursor:true,pagination:{el:"#we-swiper-pagination",clickable:true},navigation:{nextEl:"#we-swiper-button-next",prevEl:"#we-swiper-button-prev"}});new Swiper("#food-swiper-container",{slidesPerView:1,spaceBetween:10,effect:"cards",grabCursor:true,pagination:{el:"#food-swiper-pagination",clickable:true},navigation:{nextEl:"#food-swiper-button-next",prevEl:"#food-swiper-button-prev"}});function openForm(){document.getElementById("rsvpPopup").style.display="block"}function closeForm(){document.getElementById("rsvpPopup").style.display="none"}document.getElementById("rsvpForm").addEventListener("submit",function(e){e.preventDefault();closeForm();const formData={name:this.name.value,type:this.type.value,attendance:this.attendance.value};const gscriptUrl=`https://script.google.com/macros/s/AKfycbwbPc8zt_gKDrSqiTdeXzKNknGXc49AIikMOZexuQc-Wyazu_NHdRFHNhrbu5_CizwsXQ/exec`;const body={name:this.name.value,type:this.type.value,attendance:this.attendance.value,count:this.guests.value};const fetchOptions={method:"POST",body:JSON.stringify(body)};fetch(gscriptUrl,fetchOptions).then((res)=>res.json()).then((data)=>{alert("응답이 저장되었습니다!")}).then(console.log).catch((err)=>{console.error("Error:",err);alert("오류 발생했어요! 다시 시도해주세요.")})});function openGuestbook(){document.getElementById("guestbookPopup").style.display="block"}function closeGuestbook(){document.getElementById("guestbookPopup").style.display="none"}document.getElementById("guestbookForm").addEventListener("submit",function(e){e.preventDefault();closeGuestbook();const name=this.guestName.value;const message=this.guestMessage.value;const gscriptUrl=`https://script.google.com/macros/s/AKfycbxG_2066v4oF59miftkFkYj7I4HR9tTt7Y5wmTw2jAMnqNkRCtb4vJ6zHQ_rg7k0vn5/exec`;const body={name,message};const fetchOptions={method:"POST",body:JSON.stringify(body)};fetch(gscriptUrl,fetchOptions).then((res)=>res.json()).then(()=>{alert("메시지가 저장되었습니다! 감사합니다 💕")}).catch((err)=>{console.error("Error:",err);alert("오류가 발생했어요. 다시 시도해주세요!")})});function toggleAccounts(side){var accountsId=side==="groom"?"groomAccounts":"brideAccounts";var accounts=document.getElementById(accountsId);var btn=document.querySelector(`.toggle-btn[onclick="toggleAccounts('${side}')"]`);if(accounts.style.display==="none"){accounts.style.display="block";btn.classList.add("active")}else{accounts.style.display="none";btn.classList.remove("active")}}function copyToClipboard(text){navigator.clipboard.writeText(text).then(function(){alert("계좌 정보가 복사되었습니다: "+text)},function(err){console.error("복사 실패: ",err)})}let imagesLoaded=false;function loadAllImages(){if(imagesLoaded)return;imagesLoaded=true;console.log("loadAllImages");document.querySelectorAll("img[data-src]").forEach((img)=>{img.setAttribute("src",img.getAttribute("data-src"));img.classList.add("loaded")})}if(document.readyState==="complete"){loadAllImages()}else{window.addEventListener("load",loadAllImages);document.addEventListener("DOMContentLoaded",loadAllImages)};
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.4.1/index.min.js"></script>
+      </body>
+    </html>
+  </body>
+</html>
